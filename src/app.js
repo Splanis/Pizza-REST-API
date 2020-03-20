@@ -10,10 +10,14 @@ const app = express();
 dotenv.config();
 
 // Connect Database
-mongoose
-    .connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log("DB connected..."))
-    .catch(error => console.log(error));
+(async () => {
+    try {
+        await mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log("DB connected...");
+    } catch (error) {
+        console.log(error);
+    }
+})();
 
 // Middlewares
 app.use(express.json());
