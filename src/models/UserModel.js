@@ -13,12 +13,36 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
+    name: {
+        type: String,
+        required: true
+    },
+    floor: {
+        type: String,
+        required: true
+    },
+    doorbell: {
+        type: String,
+        required: true
+    },
+    phone: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    postal_code: {
+        type: String,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
     }
 });
 
-const UserModel = mongoose.model("user", UserSchema);
+const User = mongoose.model("user", UserSchema);
 
-export default UserModel;
+export default User;
