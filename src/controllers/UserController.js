@@ -1,8 +1,8 @@
+import User from "../models/UserModel";
+
 import Joi from "@hapi/joi";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-
-import User from "../models/UserModel";
 
 // Register
 

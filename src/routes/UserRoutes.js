@@ -1,11 +1,12 @@
 import express from "express";
 
-import { register, login, update } from "../controllers/UserController";
+import { register, login, update, userProfile } from "../controllers/UserController";
 
 const router = express.Router();
 
+router.get("/:id", userProfile);
 router.post("/register", register);
 router.post("/login", login);
 router.patch("/update", update);
 
-export { router as AuthRoute };
+export { router as AuthRoutes };
