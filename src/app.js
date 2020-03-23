@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 // Routers
 import { AuthRoute } from "./routes/UserRoutes";
 
-// Init
+// Init App
 const app = express();
 dotenv.config();
 
@@ -27,4 +27,4 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/user", AuthRoute);
 
 // Start
-app.listen(process.env.LISTEN_PORT, () => console.log(`Server started at port ${process.env.LISTEN_PORT}...`));
+app.listen(process.env.LISTEN_PORT || 3000, () => console.log(`Server started at port ${process.env.LISTEN_PORT}...`));
