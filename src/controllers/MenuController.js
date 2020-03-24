@@ -1,7 +1,13 @@
 import { Product, Category } from "../models/MenuModel";
 
-export const getCategories = async (req, res) => {
-    // TODO
+export const getMenu = async (req, res) => {
+    try {
+        const menu = await Category.find({});
+        res.json(menu);
+    } catch (error) {
+        res.json({ error_message: error });
+    }
+
     return;
 };
 
