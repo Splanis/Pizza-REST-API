@@ -7,8 +7,6 @@ export const getMenu = async (req, res) => {
     } catch (error) {
         res.json({ error_message: error });
     }
-
-    return;
 };
 
 export const addCategory = async (req, res) => {
