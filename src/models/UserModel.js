@@ -3,44 +3,23 @@ import mongoose, { Schema } from "mongoose";
 const UserSchema = new Schema({
     username: {
         type: String,
-        required: true
+        required: true,
     },
     email: {
         type: String,
-        required: true
+        required: true,
     },
     password: {
         type: String,
-        required: true
+        required: true,
     },
-    name: {
-        type: String,
-        required: true
-    },
-    floor: {
-        type: String,
-        required: true
-    },
-    doorbell: {
-        type: String,
-        required: true
-    },
-    phone: {
-        type: String,
-        required: true
-    },
-    address: {
-        type: String,
-        required: true
-    },
-    postal_code: {
-        type: String,
-        required: true
-    },
-    date: {
+    dateRegistered: {
         type: Date,
-        default: Date.now
-    }
+        default: Date.now,
+    },
+    servers: [
+        { type: mongoose.Schema.Types.ObjectId, ref: "Server", default: [] },
+    ],
 });
 
 const User = mongoose.model("User", UserSchema);
